@@ -1,0 +1,281 @@
+[ 2024-07-08 23:13:13,273] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[ 2024-07-08 23:13:13,273] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-07-08 23:20:40,169] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:20:40] "GET / HTTP/1.1" 200 -
+[ 2024-07-08 23:20:40,395] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:20:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2024-07-08 23:21:23,225] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:21:23] "GET /predictdata HTTP/1.1" 200 -
+[ 2024-07-08 23:22:18,036] 838 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 58, in load_object
+    with open(file_path, "rb") as file_obj:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 18, in predict
+    preprocessor=load_object(file_path=preprocessor_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 62, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\app.py", line 39, in predict_datapoint
+    results=predict_pipeline.predict(pred_df)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 25, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+[ 2024-07-08 23:22:18,052] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:22:18] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -
+[ 2024-07-08 23:22:25,100] 838 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 58, in load_object
+    with open(file_path, "rb") as file_obj:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 18, in predict
+    preprocessor=load_object(file_path=preprocessor_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 62, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\app.py", line 39, in predict_datapoint
+    results=predict_pipeline.predict(pred_df)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 25, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+[ 2024-07-08 23:22:25,100] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:22:25] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -
+[ 2024-07-08 23:22:28,451] 838 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 58, in load_object
+    with open(file_path, "rb") as file_obj:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 18, in predict
+    preprocessor=load_object(file_path=preprocessor_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 62, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\app.py", line 39, in predict_datapoint
+    results=predict_pipeline.predict(pred_df)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 25, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+[ 2024-07-08 23:22:28,451] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:22:28] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -
+[ 2024-07-08 23:22:40,747] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:22:40] "GET / HTTP/1.1" 200 -
+[ 2024-07-08 23:22:59,680] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:22:59] "GET /predictdata HTTP/1.1" 200 -
+[ 2024-07-08 23:23:35,319] 838 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 58, in load_object
+    with open(file_path, "rb") as file_obj:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 18, in predict
+    preprocessor=load_object(file_path=preprocessor_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 62, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\app.py", line 39, in predict_datapoint
+    results=predict_pipeline.predict(pred_df)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 25, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+[ 2024-07-08 23:23:35,322] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:23:35] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -
+[ 2024-07-08 23:25:12,191] 838 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 58, in load_object
+    with open(file_path, "rb") as file_obj:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 18, in predict
+    preprocessor=load_object(file_path=preprocessor_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 62, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\app.py", line 39, in predict_datapoint
+    results=predict_pipeline.predict(pred_df)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 25, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+[ 2024-07-08 23:25:12,191] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:25:12] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -
+[ 2024-07-08 23:30:26,424] 838 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 58, in load_object
+    with open(file_path, "rb") as file_obj:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 18, in predict
+    preprocessor=load_object(file_path=preprocessor_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 62, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\app.py", line 39, in predict_datapoint
+    results=predict_pipeline.predict(pred_df)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 25, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+[ 2024-07-08 23:30:26,429] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:30:26] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -
+[ 2024-07-08 23:30:34,805] 838 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 58, in load_object
+    with open(file_path, "rb") as file_obj:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 18, in predict
+    preprocessor=load_object(file_path=preprocessor_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\utils.py", line 62, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\app.py", line 39, in predict_datapoint
+    results=predict_pipeline.predict(pred_df)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91860\OneDrive\Documents\mlProject\src\pipeline\predict_pipeline.py", line 25, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+[ 2024-07-08 23:30:34,805] 97 werkzeug - INFO - 127.0.0.1 - - [08/Jul/2024 23:30:34] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -

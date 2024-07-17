@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: mlProject
+Version: 0.0.1
+Author: Anshu
+Author-email: rastogianshika05@gmail.com
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: seaborn
